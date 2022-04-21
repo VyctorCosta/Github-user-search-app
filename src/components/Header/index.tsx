@@ -1,9 +1,9 @@
 import React from "react";
 import { ButtonDarkMode, Container, Title } from "./styles";
-import Theme from "../../types/themeType";
+import { DefaultTheme } from "styled-components";
 
 interface Props {
-  theme: Theme;
+  theme: DefaultTheme;
   toggleTheme(): void;
 }
 
