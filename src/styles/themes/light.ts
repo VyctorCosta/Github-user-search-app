@@ -24,7 +24,7 @@ const content = {
   colorBio: "#70757C",
   colorJoined: "#70757C",
   colorNotAvaliable: "#8F96A6",
-  backgroundRepo: "#F5F8FF",
+  backgroundRepo: "#E6E8EC",
   titleRepo: "#70757C",
   valueRepo: "#000000",
   colorInfo: "#5A7099",

@@ -11,14 +11,22 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  display: flex;
   width: 620px;
-  /* background-color: red; */
+  flex-direction: column;
+  align-items: flex-end;
 `;
 
 export const Title = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: row;
   gap: 50px;
+  margin-bottom: 40px;
+
+  img {
+    border-radius: 50px;
+  }
 `;
 
 export const UserInfos = styled.div`
@@ -29,6 +37,7 @@ export const UserInfos = styled.div`
 
   h3 {
     color: ${({ theme }) => theme.content.colorLogin};
+    margin-bottom: 20px;
   }
 `;
 
@@ -48,4 +57,13 @@ export const TitleWithJoin = styled.div`
 
 export const UserBio = styled.p`
   color: ${({ theme }) => theme.content.colorBio};
+  max-width: 470px;
+`;
+
+export const RepoInfo = styled.div`
+  width: 470px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: ${({ theme }) => theme.content.backgroundRepo};
+  border-radius: 14px;
 `;
