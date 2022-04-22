@@ -6,6 +6,11 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 30px;
+
+  @media (max-width: 720px) {
+    width: 286px;
+    flex-direction: column;
+  }
 `;
 
 export const ColumnDiv = styled.div`
@@ -13,6 +18,11 @@ export const ColumnDiv = styled.div`
   justify-content: space-between;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 720px) {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 interface Props {

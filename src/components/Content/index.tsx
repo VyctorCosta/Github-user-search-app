@@ -3,7 +3,16 @@ import { DefaultTheme } from "styled-components";
 import UserGithub from "../../types/UserGithub";
 import Contact from "./components/Contact";
 import Info from "./components/Info";
-import { Container, Content, RepoInfo, Title, TitleWithJoin, UserBio, UserInfos } from "./styles";
+import {
+  Container,
+  Content,
+  RepoInfo,
+  Title,
+  TitleLogin,
+  TitleWithJoin,
+  UserBio,
+  UserInfos,
+} from "./styles";
 
 interface Props {
   userInfo: UserGithub | undefined;
@@ -28,17 +37,17 @@ const ContentInfo: React.FC<Props> = ({ userInfo, stringInput, theme }) => {
           />
           <UserInfos>
             <TitleWithJoin>
-              {
-                // userInfo?.name ? userInfo.name : "Usuário não existe"
-              }
-              <h2>
-                {(() => {
-                  console.log(stringInput);
-                  if (userInfo?.name === undefined) return stringInput;
-                  if (userInfo.name === null) return userInfo.login;
-                  return userInfo.name;
-                })()}
-              </h2>
+              <TitleLogin>
+                <h2>
+                  {(() => {
+                    console.log(stringInput);
+                    if (userInfo?.name === undefined) return stringInput;
+                    if (userInfo.name === null) return userInfo.login;
+                    return userInfo.name;
+                  })()}
+                </h2>
+                <h3>{userInfo?.login ? `@${userInfo?.login}` : ""}</h3>
+              </TitleLogin>
               <h4>
                 {(() => {
                   if (!userInfo?.created_at) return "";
@@ -47,16 +56,15 @@ const ContentInfo: React.FC<Props> = ({ userInfo, stringInput, theme }) => {
                 })()}
               </h4>
             </TitleWithJoin>
-            <h3>{userInfo?.login ? `@${userInfo?.login}` : ""}</h3>
-            <UserBio>
-              {(() => {
-                if (userInfo?.bio === undefined) return "User doesn't exist.";
-                if (userInfo.bio === null) return "This profile has no bio.";
-                return userInfo.bio;
-              })()}
-            </UserBio>
           </UserInfos>
         </Title>
+        <UserBio>
+          {(() => {
+            if (userInfo?.bio === undefined) return "User doesn't exist.";
+            if (userInfo.bio === null) return "This profile has no bio.";
+            return userInfo.bio;
+          })()}
+        </UserBio>
         <RepoInfo>
           <Info title="Repos" value={userInfo ? userInfo.public_repos : 0} />
           <Info title="Followers" value={userInfo ? userInfo.followers : 0} />
