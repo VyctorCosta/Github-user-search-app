@@ -8,10 +8,6 @@ export const Container = styled.div`
   margin-top: 30px;
   padding: 40px 0;
   border-radius: 20px;
-
-  @media (max-width: 720px) {
-    /* padding: 0; */
-  }
 `;
 
 export const Content = styled.div`
@@ -55,10 +51,6 @@ export const UserInfos = styled.div`
     color: ${({ theme }) => theme.content.colorJoined};
     margin-bottom: 20px;
   }
-  /* h3 {
-    color: ${({ theme }) => theme.content.colorLogin};
-    margin-bottom: 20px;
-  } */
 `;
 
 export const TitleLogin = styled.div`

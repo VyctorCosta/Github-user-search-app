@@ -34,7 +34,6 @@ export const RowDiv = styled.div<Props>`
   align-items: center;
   gap: 15px;
   color: ${({ theme, userExists }) => {
-    console.log(userExists);
     return userExists ? theme.content.colorInfo : theme.content.colorNotAvaliable;
   }};
 

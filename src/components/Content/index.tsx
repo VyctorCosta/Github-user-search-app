@@ -40,7 +40,6 @@ const ContentInfo: React.FC<Props> = ({ userInfo, stringInput, theme }) => {
               <TitleLogin>
                 <h2>
                   {(() => {
-                    console.log(stringInput);
                     if (userInfo?.name === undefined) return stringInput;
                     if (userInfo.name === null) return userInfo.login;
                     return userInfo.name;
